@@ -74,12 +74,44 @@ class Board extends React.Component {
   }
 }
 
+class LargeBoard extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      largeBoard: Array(9).fill(null),
+      largeBoardInPlay: null
+    }
+  }
+  render() {
+    return (
+      <div>
+        <div className="local-board-row">
+          <Board />
+          <Board />
+          <Board />
+        </div>
+        <div className="local-board-row">
+          <Board />
+          <Board />
+          <Board />
+        </div>
+        <div className="local-board-row">
+          <Board />
+          <Board />
+          <Board />
+        </div>
+
+      </div>
+    )
+  }
+}
+
 class Game extends React.Component {
   render() {
     return (
       <div className="game">
         <div className="game-board">
-          <Board />
+          <LargeBoard />
         </div>
         <div className="game-info">
           <div>{/* status */}</div>
